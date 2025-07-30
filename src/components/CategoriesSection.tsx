@@ -31,7 +31,6 @@ interface CategoriesSectionProps {
   categories: Category[];
 }
 
-// Normalizar para eliminar espacios y hacer comparación segura
 const normalizePlatform = (platform: string) =>
   platform.toLowerCase().replace(/\s+/g, '');
 
@@ -75,7 +74,11 @@ export function CategoriesSection({ categories }: CategoriesSectionProps) {
               <Link to={`/categoria/${category.platform}/${category.type}`} key={category.id}>
                 <Card className="hover:shadow-md transition-all h-full">
                   <CardContent className="p-4 text-center flex flex-col items-center justify-center">
-                    <div className="mb-3">{platformIcons[iconKey]}</div>
+                    <div className="mb-3">
+                      {platformIcons[iconKey] || (
+                        <div className="w-7 h-7 bg-gray-300 rounded-full" />
+                      )}
+                    </div>
                     <h3 className="font-medium text-sm">{category.name}</h3>
                   </CardContent>
                 </Card>
@@ -84,10 +87,6 @@ export function CategoriesSection({ categories }: CategoriesSectionProps) {
           })}
         </div>
       </div>
-    </section>
-  );
-}
-
     </section>
   );
 }

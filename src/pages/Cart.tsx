@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Minus, Plus, ShoppingCart, Trash2, X } from 'lucide-react';
 import { formatPriceToCOP } from '@/lib/currency';
@@ -13,13 +13,9 @@ export default function Cart() {
   const navigate = useNavigate();
   const { items, removeItem, updateQuantity, clearCart, totalPrice } = useCart();
 
-  // 👇 Esto asegura que al entrar al carrito, la pantalla suba al top
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
-
-  // Aquí continúa el resto de tu lógica/renderizado del carrito...
-}
 
 
   const platformIcons: Record<string, string> = {

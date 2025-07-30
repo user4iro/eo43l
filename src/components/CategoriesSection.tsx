@@ -19,8 +19,9 @@ import {
   FaSoundcloud,
   FaGlobe,
   FaImdb,
+  FaCloud,
 } from 'react-icons/fa';
-import { SiOnlyfans, SiDeezer, SiTidal, SiMixcloud, SiKickstarter } from 'react-icons/si';
+import { SiOnlyfans } from 'react-icons/si';
 
 
 interface CategoriesSectionProps {
@@ -44,13 +45,13 @@ export function CategoriesSection({ categories }: CategoriesSectionProps) {
     linkedin: <FaLinkedin className="text-blue-700 w-7 h-7" />,
     'apple-music': <FaApple className="text-gray-700 w-7 h-7" />,
     threads: <FaHashtag className="text-black w-7 h-7" />,
-    deezer: <SiDeezer className="text-pink-500 w-7 h-7" />,
-    tidal: <SiTidal className="text-black w-7 h-7" />,
-    mixcloud: <SiMixcloud className="text-blue-500 w-7 h-7" />,
+    deezer: <FaCloud className="text-pink-500 w-7 h-7" />,
+    tidal: <FaCloud className="text-black w-7 h-7" />,
+    mixcloud: <FaCloud className="text-blue-500 w-7 h-7" />,
     soundcloud: <FaSoundcloud className="text-orange-500 w-7 h-7" />,
     web: <FaGlobe className="text-gray-600 w-7 h-7" />,
     imdb: <FaImdb className="text-yellow-500 w-7 h-7" />,
-    kick: <SiKickstarter className="text-green-700 w-7 h-7" />,
+    kick: <FaCloud className="text-green-700 w-7 h-7" />,
   };
 
 

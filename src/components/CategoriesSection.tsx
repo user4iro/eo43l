@@ -2,17 +2,19 @@ import { Link } from 'react-router-dom';
 import { Card, CardContent } from '@/components/ui/card';
 import { Category } from '@/types';
 
+import { FaInstagram, FaFacebookF, FaTiktok, FaYoutube, FaTwitter } from 'react-icons/fa';
+
 interface CategoriesSectionProps {
   categories: Category[];
 }
 
 export function CategoriesSection({ categories }: CategoriesSectionProps) {
-  const platformIcons: Record<string, string> = {
-    instagram: '📸',
-    facebook: '👍',
-    tiktok: '🎵',
-    youtube: '📹',
-    twitter: '🐦',
+  const platformIcons: Record<string, JSX.Element> = {
+    instagram: <FaInstagram className="text-pink-500 w-7 h-7" />,
+    facebook: <FaFacebookF className="text-blue-600 w-7 h-7" />,
+    tiktok: <FaTiktok className="text-black w-7 h-7" />,
+    youtube: <FaYoutube className="text-red-600 w-7 h-7" />,
+    twitter: <FaTwitter className="text-blue-400 w-7 h-7" />,
   };
 
   return (
@@ -29,7 +31,7 @@ export function CategoriesSection({ categories }: CategoriesSectionProps) {
             <Link to={`/categoria/${category.platform}/${category.type}`} key={category.id}>
               <Card className="hover:shadow-md transition-all h-full">
                 <CardContent className="p-4 text-center flex flex-col items-center justify-center">
-                  <div className="text-4xl mb-3">{platformIcons[category.platform]}</div>
+                  <div className="mb-3">{platformIcons[category.platform]}</div>
                   <h3 className="font-medium text-sm">{category.name}</h3>
                 </CardContent>
               </Card>

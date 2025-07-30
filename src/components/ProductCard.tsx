@@ -7,6 +7,9 @@ import { Product } from '@/types';
 import { useCart } from '@/hooks/use-cart';
 import { formatPriceToCOP } from '@/lib/currency';
 
+// Importar íconos de react-icons
+import { FaInstagram, FaFacebook, FaTiktok, FaYoutube, FaTwitter, FaSpotify, FaPinterest, FaTwitch, FaReddit, FaWhatsapp, FaTelegramPlane, FaLinkedin, FaApple, FaThreads, FaDeezer, FaSoundcloud, FaGlobe, FaImdb, FaKickstarterK, FaCloud, FaCrown } from 'react-icons/fa';
+
 interface ProductCardProps {
   product: Product;
 }
@@ -40,33 +43,33 @@ export function ProductCard({ product }: ProductCardProps) {
     if (platformLogos[platform]) {
       return <img src={platformLogos[platform]} alt={platform} className="h-12 w-12 text-primary" />;
     }
-    
-    const platformIcons: Record<string, string> = {
-      instagram: '📸',
-      facebook: '👍',
-      tiktok: '🎵',
-      youtube: '📹',
-      twitter: '🐦',
-      spotify: '🎵',
-      pinterest: '📌',
-      twitch: '🎮',
-      reddit: '🤖',
-      whatsapp: '💬',
-      telegram: '✈️',
-      onlyfans: '👑',
-      linkedin: '💼',
-      'apple-music': '🎵',
-      threads: '🧵',
-      deezer: '🎧',
-      tidal: '🌊',
-      mixcloud: '☁️',
-      soundcloud: '☁️',
-      web: '🌐',
-      imdb: '🎬',
-      kick: '👟',
+
+    const platformIcons: Record<string, JSX.Element> = {
+      instagram: <FaInstagram className="h-12 w-12 text-[#E1306C]" />,
+      facebook: <FaFacebook className="h-12 w-12 text-[#1877F2]" />,
+      tiktok: <FaTiktok className="h-12 w-12 text-black" />,
+      youtube: <FaYoutube className="h-12 w-12 text-[#FF0000]" />,
+      twitter: <FaTwitter className="h-12 w-12 text-[#1DA1F2]" />,
+      spotify: <FaSpotify className="h-12 w-12 text-[#1DB954]" />,
+      pinterest: <FaPinterest className="h-12 w-12 text-[#BD081C]" />,
+      twitch: <FaTwitch className="h-12 w-12 text-[#9146FF]" />,
+      reddit: <FaReddit className="h-12 w-12 text-[#FF4500]" />,
+      whatsapp: <FaWhatsapp className="h-12 w-12 text-[#25D366]" />,
+      telegram: <FaTelegramPlane className="h-12 w-12 text-[#0088cc]" />,
+      onlyfans: <FaCrown className="h-12 w-12 text-[#00AFF0]" />,
+      linkedin: <FaLinkedin className="h-12 w-12 text-[#0077B5]" />,
+      'apple-music': <FaApple className="h-12 w-12 text-black" />,
+      threads: <FaThreads className="h-12 w-12 text-black" />,
+      deezer: <FaDeezer className="h-12 w-12 text-[#FF0000]" />,
+      tidal: <FaCloud className="h-12 w-12 text-[#000000]" />,
+      mixcloud: <FaCloud className="h-12 w-12 text-[#666666]" />,
+      soundcloud: <FaSoundcloud className="h-12 w-12 text-[#FF5500]" />,
+      web: <FaGlobe className="h-12 w-12 text-[#555]" />,
+      imdb: <FaImdb className="h-12 w-12 text-[#F5C518]" />,
+      kick: <FaKickstarterK className="h-12 w-12 text-[#2DB94D]" />,
     };
-    
-    return <div className="text-5xl">{platformIcons[platform] || '🌐'}</div>;
+
+    return platformIcons[platform] || <FaGlobe className="h-12 w-12 text-muted-foreground" />;
   };
 
   return (

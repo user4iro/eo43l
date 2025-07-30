@@ -62,7 +62,9 @@ export function CategoriesSection({ categories }: CategoriesSectionProps) {
     <section className="py-12 bg-muted/50">
       <div className="container">
         <div className="text-center mb-10">
-          <h2 className="text-3xl font-bold tracking-tight">Servicios por categoría</h2>
+          <h2 className="text-3xl font-bold tracking-tight">
+            Servicios por categoría
+          </h2>
           <p className="text-muted-foreground mt-2">
             Explora nuestras diferentes opciones para cada plataforma
           </p>
@@ -71,11 +73,14 @@ export function CategoriesSection({ categories }: CategoriesSectionProps) {
           {categories.map((category) => {
             const iconKey = normalizePlatform(category.platform);
             return (
-              <Link to={`/categoria/${category.platform}/${category.type}`} key={category.id}>
+              <Link
+                to={`/categoria/${category.platform}/${category.type}`}
+                key={category.id}
+              >
                 <Card className="hover:shadow-md transition-all h-full">
                   <CardContent className="p-4 text-center flex flex-col items-center justify-center">
                     <div className="mb-3">
-                      {platformIcons[iconKey] || (
+                      {platformIcons[iconKey] ?? (
                         <div className="w-7 h-7 bg-gray-300 rounded-full" />
                       )}
                     </div>

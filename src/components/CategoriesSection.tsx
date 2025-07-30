@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Card, CardContent } from '@/components/ui/card';
 import { Category } from '@/types';
-
 import {
   FaInstagram,
   FaFacebookF,
@@ -22,6 +21,7 @@ import {
   FaImdb,
 } from 'react-icons/fa';
 import { SiOnlyfans, SiDeezer, SiTidal, SiMixcloud, SiKickstarter } from 'react-icons/si';
+
 
 interface CategoriesSectionProps {
   categories: Category[];
@@ -53,6 +53,7 @@ export function CategoriesSection({ categories }: CategoriesSectionProps) {
     kick: <SiKickstarter className="text-green-700 w-7 h-7" />,
   };
 
+
   return (
     <section className="py-12 bg-muted/50">
       <div className="container">
@@ -67,7 +68,7 @@ export function CategoriesSection({ categories }: CategoriesSectionProps) {
             <Link to={`/categoria/${category.platform}/${category.type}`} key={category.id}>
               <Card className="hover:shadow-md transition-all h-full">
                 <CardContent className="p-4 text-center flex flex-col items-center justify-center">
-                  <div className="mb-3">{platformIcons[category.platform]}</div>
+                  <div className="text-4xl mb-3">{platformIcons[category.platform]}</div>
                   <h3 className="font-medium text-sm">{category.name}</h3>
                 </CardContent>
               </Card>

@@ -8,7 +8,7 @@ import { useCart } from '@/hooks/use-cart';
 import { formatPriceToCOP } from '@/lib/currency';
 
 // Importar íconos de react-icons
-import { FaInstagram, FaFacebook, FaTiktok, FaYoutube, FaTwitter, FaSpotify, FaPinterest, FaTwitch, FaReddit, FaWhatsapp, FaTelegramPlane, FaLinkedin, FaApple, FaThreads, FaDeezer, FaSoundcloud, FaGlobe, FaImdb, FaKickstarterK, FaCloud, FaCrown } from 'react-icons/fa';
+import { FaInstagram, FaFacebook, FaTiktok, FaYoutube, FaTwitter, FaSpotify, FaPinterest, FaTwitch, FaReddit, FaWhatsapp, FaTelegramPlane, FaLinkedin, FaApple, FaDeezer, FaSoundcloud, FaGlobe, FaImdb, FaKickstarterK, FaCloud, FaCrown } from 'react-icons/fa';
 
 interface ProductCardProps {
   product: Product;
@@ -59,7 +59,7 @@ export function ProductCard({ product }: ProductCardProps) {
       onlyfans: <FaCrown className="h-12 w-12 text-[#00AFF0]" />,
       linkedin: <FaLinkedin className="h-12 w-12 text-[#0077B5]" />,
       'apple-music': <FaApple className="h-12 w-12 text-black" />,
-      threads: <FaThreads className="h-12 w-12 text-black" />,
+      threads: <FaGlobe className="h-12 w-12 text-black" />,
       deezer: <FaDeezer className="h-12 w-12 text-[#FF0000]" />,
       tidal: <FaCloud className="h-12 w-12 text-[#000000]" />,
       mixcloud: <FaCloud className="h-12 w-12 text-[#666666]" />,
